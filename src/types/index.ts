@@ -5,14 +5,15 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
 };
 
 
+
 export interface ICureentUser {
-  _id: string;
-  name: string;
+  userId: string;
+  name: string
+  username: string;
   email: string;
-  mobileNumber: string;
   role: string;
+  profilePicture?: string;
   status: string;
-  profilePhoto?: string;
-  iat?: number;
-  exp?: number;
-};
+  phoneNumber: string;
+
+}
