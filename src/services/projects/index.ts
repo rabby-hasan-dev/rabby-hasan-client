@@ -1,5 +1,6 @@
 'use server'
 
+import envConfig from "@/src/config/envConfig";
 import axiosInstance from "@/src/lib/AxiosInstance";
 
 
@@ -85,3 +86,14 @@ export const deleteSingleProject = async (projectId: string) => {
     }
 
 }
+
+//  without authentication all project api
+
+export const FeedProjects = async () => {
+
+    const res = await fetch(`${envConfig.baseApi}/projects`)
+    return res.json();
+
+}
+
+
