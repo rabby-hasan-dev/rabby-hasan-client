@@ -1,12 +1,13 @@
 
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 
-import { useGetProject } from "@/src/hooks/Project.hooks";
+import { useDeleteProject, useGetProject } from "@/src/hooks/Project.hooks";
 import { usePagination } from "@/src/hooks/pagination.hook";
 import { useDebouncedSearch } from "@/src/hooks/Debounce.hooks";
 import MainTable from "@/src/components/Table/MainTable";
+import { toast } from "sonner";
 
 
 
@@ -37,6 +38,7 @@ const columns = [
 export default function ProjectManagement() {
     const { filterValue, setFilterValue, debouncedValue, onSearchChange } = useDebouncedSearch();
     const { page, handlePageChange } = usePagination();
+    const { mutate: deleteProject, data: deleteData, isSuccess } = useDeleteProject();
 
     const { data } = useGetProject({
         searchTerm: debouncedValue,
@@ -49,9 +51,24 @@ export default function ProjectManagement() {
 
 
 
-    const handleAddProject = () => {
-        console.log("Add new project");
+    const handleDeleteProject = (id: string) => {
+        console.log("Add new project", id);
+        const res = deleteProject(id);
+        console.log(res);
+
+
+
     };
+
+    useEffect(() => {
+        if (deleteData && deleteData?.success) {
+            toast.success(deleteData?.message as string);
+        }
+        if (deleteData && !deleteData?.success) {
+            toast.error(deleteData?.message as string);
+        }
+
+    }, [isSuccess, deleteData,]);
 
 
 
@@ -69,7 +86,7 @@ export default function ProjectManagement() {
                 page={page}
                 totalPages={totalPage}
                 handlePageChange={handlePageChange}
-                onAddProject={handleAddProject}
+                onDeleteProject={handleDeleteProject}
             />
         </div>
     );

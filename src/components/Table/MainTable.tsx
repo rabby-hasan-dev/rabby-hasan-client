@@ -22,7 +22,7 @@ interface ProjectTableProps {
     page: number;
     totalPages: number;
     handlePageChange: (page: number) => void;
-    onAddProject: () => void;
+    onDeleteProject: (id: string) => void;
 }
 
 
@@ -39,8 +39,11 @@ export default function ProjectTable({
     page,
     totalPages,
     handlePageChange,
-    onAddProject,
+    onDeleteProject,
 }: ProjectTableProps) {
+
+
+
 
 
     const topContent = useMemo(
@@ -69,7 +72,7 @@ export default function ProjectTable({
                 </div>
             </div>
         ),
-        [filterValue, totalData, onSearchChange, onAddProject]
+        [filterValue, totalData, onSearchChange]
     );
 
     const bottomContent = useMemo(
@@ -142,7 +145,13 @@ export default function ProjectTable({
                                 </span>
                             </Tooltip>
                             <Tooltip color="danger" content="Delete">
-                                <span className="text-lg text-danger cursor-pointer active:opacity-50">
+                                <span
+                                    onClick={() => {
+                                        if (confirm("Are you sure you want to delete this project?")) {
+                                            onDeleteProject(project._id); // Call the delete function
+                                        }
+                                    }}
+                                    className="text-lg text-danger cursor-pointer active:opacity-50">
                                     <DeleteIcon />
                                 </span>
                             </Tooltip>
@@ -152,7 +161,7 @@ export default function ProjectTable({
                     return cellValue;
             }
         },
-        []
+        [onDeleteProject]
     );
 
     return (

@@ -64,7 +64,7 @@ export const useUpdateProject = () => {
 export const useDeleteProject = () => {
     const queryClient = useQueryClient()
     return useMutation<any, Error, string>({
-        mutationKey: ["UPDATE_PROJECT"],
+        mutationKey: ["DELETE_PROJECT"],
         mutationFn: async (projectId) => await deleteSingleProject(projectId),
         onSuccess: () => {
             // Invalidate and refetch
