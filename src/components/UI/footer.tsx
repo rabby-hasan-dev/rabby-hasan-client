@@ -1,20 +1,77 @@
-import { Link } from "@nextui-org/link";
-
-
+import { FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "@/src/assets/icons";
+import { FaMediumM } from "react-icons/fa";
 
 const Footer = () => {
+
+    const socialIcons = [
+        { Icon: TwitterIcon, link: 'https://twitter.com/yourprofile' },
+        { Icon: LinkedinIcon, link: 'https://linkedin.com/in/yourprofile' },
+        { Icon: GithubIcon, link: 'https://github.com/yourprofile' },
+        { Icon: FacebookIcon, link: 'https://github.com/yourprofile' },
+        { Icon: FaMediumM, link: 'https://github.com/yourprofile' }
+
+
+    ];
+
     return (
-        <footer className="w-full flex items-center justify-center py-3">
-            <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-                title="nextui.org homepage"
-            >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">NextUI</p>
-            </Link>
+
+        <footer className="w-full flex items-center justify-center py-3 bg-gray-100 text-gray-800 shadow-md dark:bg-gray-800 dark:text-gray-200">
+            <div className="container mx-auto p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+                {/* Logo and Introduction */}
+                <div>
+                    <div className="flex items-center mb-4">
+                        <a className="avatar mr-4">
+                            <div className="w-12 rounded-xl">
+                                {/* Uncomment and add your logo image */}
+                                {/* <img src={siteLogo} alt="Site Logo" /> */}
+                            </div>
+                        </a>
+                        <p className="font-bold text-lg">Rabby Hasan</p>
+                    </div>
+                    <p className="text-sm">A reliable Web Developer with expertise in creating dynamic and responsive web applications.</p>
+                    <p className="text-xs mt-2">Copyright © 2023 - By Rabby Hasan</p>
+                </div>
+
+                {/* Services Section */}
+                <div>
+                    <span className="footer-title text-lg">Services</span>
+                    <ul>
+                        <li><a className="link link-hover text-sm hover:underline">Full Stack Development</a></li>
+                        <li><a className="link link-hover text-sm hover:underline">Front End Development</a></li>
+                        <li><a className="link link-hover text-sm hover:underline">Back End Development</a></li>
+                    </ul>
+                </div>
+
+                {/* Info Section */}
+                <div>
+                    <span className="footer-title text-lg">Info</span>
+                    <ul>
+                        <li><a className="link link-hover text-sm hover:underline">About Me</a></li>
+                        <li><a className="link link-hover text-sm hover:underline">Contact</a></li>
+                        <li><a className="link link-hover text-sm hover:underline">Jobs</a></li>
+                    </ul>
+                </div>
+
+                {/* Social Links Section */}
+                <div className='my-4 w-full'>
+                    <h3 className="text-lg font-semibold mb-4">Find Me</h3>
+                    <div className="flex justify-center space-x-4 flex-wrap">
+                        {socialIcons.map(({ Icon, link }, idx) => (
+                            <a href={link} key={idx} target="_blank" rel="noopener noreferrer">
+                                <button className="p-4 text-3xl bg-gray-200 hover:bg-blue-200 dark:bg-gray-700 dark:hover:bg-blue-600 rounded-full shadow-lg transform hover:scale-110 transition duration-300">
+                                    <Icon className="text-gray-800 dark:text-gray-200" />
+                                </button>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
+            </div>
         </footer>
+
+
+
     );
 };
 

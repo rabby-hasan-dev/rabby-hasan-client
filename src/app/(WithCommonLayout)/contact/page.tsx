@@ -9,15 +9,15 @@ import { Button } from '@nextui-org/button';
 import { Input, Textarea } from '@nextui-org/input';
 
 import Image from 'next/image';
-import { GithubIcon, LinkedinIcon, TwitterIcon } from '@/src/assets/icons';
-import { SiFacebook } from 'react-icons/si';
+import { FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '@/src/assets/icons';
+
 const ContactUs = () => {
 
   const socialIcons = [
     { Icon: TwitterIcon, link: 'https://twitter.com/yourprofile' },
     { Icon: LinkedinIcon, link: 'https://linkedin.com/in/yourprofile' },
     { Icon: GithubIcon, link: 'https://github.com/yourprofile' },
-    { Icon: SiFacebook, link: 'https://github.com/yourprofile' },
+    { Icon: FacebookIcon, link: 'https://github.com/yourprofile' },
     { Icon: FaMedium, link: 'https://github.com/yourprofile' }
   ];
 

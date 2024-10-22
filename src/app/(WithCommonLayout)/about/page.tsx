@@ -4,11 +4,11 @@
 
 import Image from "next/image";
 import { FilesIcon } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/src/assets/icons";
+import { FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "@/src/assets/icons";
 import TypeAnimationWrapper from "@/src/components/UI/TypeAnimation";
 import ProfessionalImage from '@/src/assets/brandLogo/professional1.png'
 import { FaReact, FaNodeJs, FaJsSquare, FaCode, FaBookReader, FaTrain, FaCameraRetro, FaMusic, FaCubes, FaComments, FaLightbulb, FaUsers, FaFacebook, FaMediumM, FaMedium } from 'react-icons/fa'; // React, Node.js, CSS, JS Icons
-import { SiMongodb, SiExpress, SiTailwindcss, SiNextdotjs, SiGit, SiFigma, SiFacebook } from 'react-icons/si'; // MongoDB, Express, Tailwind, Next.js Icons
+import { SiMongodb, SiExpress, SiTailwindcss, SiNextdotjs, SiGit, SiFigma, } from 'react-icons/si'; // MongoDB, Express, Tailwind, Next.js Icons
 
 
 const AboutMePage = () => {
@@ -17,7 +17,7 @@ const AboutMePage = () => {
     { Icon: TwitterIcon, link: 'https://twitter.com/yourprofile' },
     { Icon: LinkedinIcon, link: 'https://linkedin.com/in/yourprofile' },
     { Icon: GithubIcon, link: 'https://github.com/yourprofile' },
-    { Icon: SiFacebook, link: 'https://github.com/yourprofile' },
+    { Icon: FacebookIcon, link: 'https://github.com/yourprofile' },
     { Icon: FaMedium, link: 'https://github.com/yourprofile' }
   ];
 
