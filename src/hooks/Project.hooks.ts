@@ -10,11 +10,11 @@ interface MutationVariables {
 
 
 
-export const useGetProject = () => {
+export const useGetProject = ({ searchTerm, page }) => {
 
     return useQuery<any, Error, any, string[]>({
         queryKey: ["GET_PROJECT"],
-        queryFn: async () => await getAllProjects(),
+        queryFn: async () => await getAllProjects(searchTerm, page),
 
     })
 }

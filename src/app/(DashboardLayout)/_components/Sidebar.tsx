@@ -10,8 +10,12 @@ const Sidebar = () => {
         <div className="flex flex-col h-full">
             {/* Logo or Brand */}
             <div className="flex items-center justify-center h-16 bg-gray-800">
-                <h1 className="text-lg font-bold">Dashboard</h1>
+                <Link href="/" >
+                    <h1 className="text-lg font-bold">Rabby Hasan</h1>
+                </Link>
+
             </div>
+
 
             {/* Sidebar Links */}
             <nav className="flex flex-col flex-grow mt-4 space-y-2">
@@ -36,7 +40,7 @@ const Sidebar = () => {
                 <Link href="/dashboard/#experience" className="flex items-center px-4 py-2 text-sm font-medium text-white transition bg-gray-800 hover:bg-gray-700">
                     <Settings2 className="w-5 h-5 mr-3" /> Experience
                 </Link>
-                <Link href="/dashboard/#projects" className="flex items-center px-4 py-2 text-sm font-medium text-white transition bg-gray-800 hover:bg-gray-700">
+                <Link href="/dashboard/projects" className="flex items-center px-4 py-2 text-sm font-medium text-white transition bg-gray-800 hover:bg-gray-700">
                     <MonitorCheckIcon className="w-5 h-5 mr-3" />Projects
                 </Link>
             </nav>

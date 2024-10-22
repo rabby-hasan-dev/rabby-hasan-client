@@ -16,7 +16,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
         <div className="flex h-screen overflow-hidden">
             {/* Sidebar (Responsive) */}
             <aside
-                className={`fixed inset-y-0 left-0 z-30 w-64 bg-gray-900 text-white p-6 transition-transform transform lg:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+                className={`fixed inset-y-0 left-0 z-30 w-64 bg-gray-900 text-white dark:bg-gray-800 dark:text-gray-100 p-6 transition-transform transform lg:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
                     } md:relative md:translate-x-0 md:w-64 lg:w-64`}
             >
                 <Sidebar />
@@ -36,11 +36,12 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
                 <Header toggleSidebar={toggleSidebar} />
 
                 {/* Main Content */}
-                <main className="p-6 bg-gray-100 dark:text-white min-h-full flex-1">
+                <main className="p-6 bg-gray-100 dark:bg-gray-900 dark:text-gray-100 min-h-full flex-1 transition-colors duration-500">
                     <div className="container mx-auto">{children}</div>
                 </main>
             </div>
         </div>
+
     );
 };
 

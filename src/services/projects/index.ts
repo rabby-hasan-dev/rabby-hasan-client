@@ -39,10 +39,19 @@ export const updateProject = async (projectId: string, projectData: FormData) =>
 
 
 
-export const getAllProjects = async () => {
+export const getAllProjects = async (searchTerm, page) => {
+
+    console.log(searchTerm, page)
 
     try {
-        const { data } = await axiosInstance.get('/projects');
+        const { data } = await axiosInstance.get('/projects', {
+            params: {
+                searchTerm,
+                page,
+                // sort: selectedSort,
+            },
+
+        });
         return data;
     } catch (error: any) {
 
