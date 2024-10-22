@@ -3,17 +3,14 @@ import Image from 'next/image';
 import mernStack from '@/src/assets/what ido icon/MERN-Stack.png'
 import frontEnd from '@/src/assets/what ido icon/Webdevelopment.png'
 import backEnd from '@/src/assets/what ido icon/backend.jpg'
+import HeadingComponent from '@/src/components/UI/HeadingComponent';
 
 
 const WhatIdo = () => {
     return (
         <div className="my-16 mx-4">
-            <h4 className="uppercase text-xl text-center text-gray-600 dark:text-gray-300">
-                Features
-            </h4>
-            <h2 className="text-5xl my-8 font-semibold text-center text-gray-800 dark:text-gray-100">
-                What I Do?
-            </h2>
+            <HeadingComponent heading=' What I Do?' subHeading=' Features' />
+
             <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {/* Full Stack Development Card */}
                 <div className="card bg-white dark:bg-gray-800 shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out rounded-lg overflow-hidden">

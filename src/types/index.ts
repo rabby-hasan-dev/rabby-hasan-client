@@ -18,6 +18,44 @@ export interface ICureentUser {
 
 }
 
+export type TUserName = {
+  firstName: string;
+  lastName: string;
+};
+
+export interface IUser {
+  _id?: String;
+  name?: TUserName;
+  email: string;
+  password: string;
+  needsPasswordChange: boolean;
+  passwordChangedAt?: Date;
+  role: string;
+  isVerified: boolean;
+  status: string;
+  profilePicture: string;
+  bio: string;
+  phone: string;
+  address: string;
+  website?: string;
+  linkedIn?: string;
+  github?: string;
+  profilePictureUrl?: string;
+  projects: string;
+  experience: string;
+  technologies: string;
+  isDeleted: boolean;
+}
+
+
+
+
+
+
+
+
+
+
 export interface IInput {
   variant?: "flat" | "bordered" | "faded" | "underlined";
   size?: "sm" | "md" | "lg";

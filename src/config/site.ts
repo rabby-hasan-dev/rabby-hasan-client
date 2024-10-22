@@ -13,6 +13,10 @@ export const siteConfig = {
       href: "/projects",
     },
     {
+      label: "About Me",
+      href: "/about",
+    },
+    {
       label: "Contact",
       href: "/contact",
     },
@@ -20,10 +24,7 @@ export const siteConfig = {
       label: "Blog",
       href: "/blog",
     },
-    {
-      label: "About Me",
-      href: "/about",
-    },
+
     {
       label: "Dashboard",
       href: "/dashboard",
@@ -39,6 +40,10 @@ export const siteConfig = {
       href: "/projects",
     },
     {
+      label: "About Me",
+      href: "/about",
+    },
+    {
       label: "Contact",
       href: "/contact",
     },
@@ -46,10 +51,7 @@ export const siteConfig = {
       label: "Blog",
       href: "/blog",
     },
-    {
-      label: "About Me",
-      href: "/about",
-    },
+
     {
       label: "Logout",
       href: "/logout",

@@ -1,3 +1,4 @@
+import { IUser } from ".";
 
 
 export interface IProject {
@@ -9,7 +10,7 @@ export interface IProject {
     githubRepoServer: string;
     liveDemo?: string;
     category?: string;
-    author: string;
+    author: IUser;
     images?: string[];
     client?: string;
     testimonials: string[];
@@ -20,6 +21,6 @@ export interface IProject {
     tags: string[];
     collaborators: string;
     views: number;
-    isFeatured: boolean;
+    Features: string[];
     isDeleted: boolean
 }

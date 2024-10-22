@@ -2,14 +2,16 @@
 import ProfessionalImage from '@/src/assets/brandLogo/professional1.png'
 import Image from 'next/image';
 import TypeAnimationWrapper from '@/src/components/UI/TypeAnimation';
-import { GithubIcon, LinkedinIcon, TwitterIcon } from '@/src/assets/icons';
+import { FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '@/src/assets/icons';
+import { FilesIcon } from 'lucide-react';
 
 const IntroSection = () => {
 
     const socialLinks = [
         { icon: TwitterIcon, url: 'https://twitter.com/', name: 'Twitter' },
         { icon: LinkedinIcon, url: 'https://www.linkedin.com/in/rabby-hasan-dev/', name: 'LinkedIn' },
-        { icon: GithubIcon, url: 'https://github.com/rabby-hasan-dev', name: 'GitHub' }
+        { icon: GithubIcon, url: 'https://github.com/rabby-hasan-dev', name: 'GitHub' },
+        { icon: FacebookIcon, url: 'https://facebook.com/rabby-hasan-dev', name: 'Facebook' },
     ];
     return (
         <div className="border-b-2 flex flex-col lg:flex-row-reverse justify-between items-center space-y-10 lg:space-y-0 lg:space-x-8">
@@ -60,6 +62,16 @@ const IntroSection = () => {
                             </a>
                         ))}
                     </div>
+
+                </div>
+                {/* Download CV */}
+                <div>
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Download My Resume</h3>
+                    <a href="https://drive.google.com/file/d/1m-18sCd82jnFhwsCC0oxOIOlHJ2Gxscc/view?usp=drive_link" className="inline-block">
+                        <button className="p-4 text-2xl bg-gradient-to-r from-blue-400 to-blue-600 dark:from-blue-500 dark:to-blue-700 text-white rounded-full shadow-lg hover:bg-blue-500 dark:hover:bg-blue-600 hover:scale-105 transition duration-300">
+                            <FilesIcon />
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
