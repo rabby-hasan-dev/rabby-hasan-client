@@ -5,7 +5,6 @@ import { IInput } from "@/src/types";
 
 interface IProps extends IInput {
   type?: string;
-
   defaultValue?: string
 
 
@@ -16,7 +15,7 @@ export default function RHTextarea({
   label,
   variant = "bordered",
   placeholder,
-
+  size,
   defaultValue
 
 }: IProps) {
@@ -29,7 +28,7 @@ export default function RHTextarea({
   return (
     <Textarea {...register(name)}
       defaultValue={defaultValue}
-
+      size={size}
       label={label}
       placeholder={placeholder}
       minRows={6}

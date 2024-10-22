@@ -7,7 +7,8 @@ import { useFormContext } from "react-hook-form";
 
 
 interface IProps extends IInput {
-  defaultvalue?: string
+  defaultvalue?: string;
+
 }
 
 export default function RHInput({
@@ -21,6 +22,7 @@ export default function RHInput({
   className,
   defaultvalue,
 
+
 }: IProps) {
 
   const { register, formState: { errors }, } = useFormContext();
@@ -29,6 +31,7 @@ export default function RHInput({
 
   return (
     <Input
+
       {...register(name)}
       errorMessage={errorMessage}
       isInvalid={isInvalid}
@@ -39,6 +42,7 @@ export default function RHInput({
       label={label}
       defaultValue={defaultvalue}
       placeholder={placeholder}
+
       className={`className`}
     />
   );

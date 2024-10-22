@@ -56,18 +56,22 @@ export default function ProjectManagement() {
 
 
     return (
-        <MainTable
-            columns={columns}
-            data={projects}
-            totalData={metadata?.total}
-            filterValue={filterValue}
-            setFilterValue={setFilterValue}
-            onSearchChange={onSearchChange}
-            page={page}
-            totalPages={totalPage}
-            handlePageChange={handlePageChange}
-            onAddProject={handleAddProject}
-        />
+        <div >
+
+            <MainTable
+
+                columns={columns}
+                data={projects}
+                totalData={metadata?.total}
+                filterValue={filterValue}
+                setFilterValue={setFilterValue}
+                onSearchChange={onSearchChange}
+                page={page}
+                totalPages={totalPage}
+                handlePageChange={handlePageChange}
+                onAddProject={handleAddProject}
+            />
+        </div>
     );
 }
 

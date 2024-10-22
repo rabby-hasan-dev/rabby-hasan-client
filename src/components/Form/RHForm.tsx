@@ -13,10 +13,11 @@ interface formConfig {
 interface IProps extends formConfig {
     children: ReactNode;
     onSubmit: SubmitHandler<any>;
+    className?: string;
 }
 
 
-const RHForm = ({ children, onSubmit, defaultValues, resolver }: IProps) => {
+const RHForm = ({ children, onSubmit, defaultValues, resolver, className }: IProps) => {
 
     const formConfig: formConfig = {};
 
@@ -32,9 +33,11 @@ const RHForm = ({ children, onSubmit, defaultValues, resolver }: IProps) => {
     const submitHandler = methods.handleSubmit;
 
     return (
-        <FormProvider {...methods}>
-            <form onSubmit={submitHandler(onSubmit)} >{children}</form>
-        </FormProvider>
+        <div>
+            <FormProvider {...methods} >
+                <form onSubmit={submitHandler(onSubmit)} >{children}</form>
+            </FormProvider>
+        </div>
     );
 };
 

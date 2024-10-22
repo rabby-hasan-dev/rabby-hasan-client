@@ -16,6 +16,7 @@ export default function RHSelect({
   label,
   variant = "bordered",
   disabled,
+  size
 }: IProps) {
   const {
     register,
@@ -28,7 +29,9 @@ export default function RHSelect({
       className="min-w-full sm:min-w-[225px]"
       isDisabled={disabled}
       label={label}
+      size={size}
       variant={variant}
+
       errorMessage={errors.root?.message}
     >
       {options.map((option) => (

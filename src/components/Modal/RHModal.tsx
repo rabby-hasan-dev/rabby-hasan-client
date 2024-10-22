@@ -34,7 +34,6 @@ export default function RHModal({
     buttonClassName,
 }: IProps) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
     return (
         <>
             <Button
@@ -47,20 +46,19 @@ export default function RHModal({
 
                 {buttonText}
             </Button>
-            <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+            <Modal
+                scrollBehavior='outside'
+                backdrop="opaque"
+                placement='center'
+                size="2xl"
+                isOpen={isOpen}
+                onOpenChange={onOpenChange}>
                 <ModalContent>
                     {(onClose) => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">{title}</ModalHeader>
                             <ModalBody>{children}</ModalBody>
-                            {/* <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-                <Button color="primary" onPress={onClose}>
-                  Action
-                </Button>
-              </ModalFooter> */}
+
                         </>
                     )}
                 </ModalContent>

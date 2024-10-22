@@ -6,8 +6,6 @@ import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from 
 import { Tooltip } from "@nextui-org/tooltip";
 import { Input } from "@nextui-org/input";
 import { DeleteIcon, EditIcon, EyeIcon, SearchIcon } from "@/src/assets/icons";
-import { Button } from "@nextui-org/button";
-import { PlusIcon } from "lucide-react";
 import { Pagination } from "@nextui-org/pagination";
 import { IProject } from "@/src/types/project.types";
 import CreateProjectModal from "../Modal/CreateProjectModal";
@@ -47,7 +45,7 @@ export default function ProjectTable({
 
     const topContent = useMemo(
         () => (
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 sticky top-16 z-10">
                 <div className="flex justify-center gap-3 items-center my-4">
                     <h2 className="text-4xl font-semibold">Projects Management</h2>
                 </div>
@@ -76,7 +74,7 @@ export default function ProjectTable({
 
     const bottomContent = useMemo(
         () => (
-            <div className="py-2 px-2 flex justify-between items-center">
+            <div className="py-2 px-2 flex justify-between items-center sticky bottom-0">
                 <Pagination
                     isCompact
                     showControls
@@ -159,11 +157,15 @@ export default function ProjectTable({
 
     return (
         <Table
+
+            isCompact
+            removeWrapper
+            isHeaderSticky
             topContent={topContent}
             bottomContent={bottomContent}
             aria-label="Project management table"
-        // bottomContentPlacement="outside"
-        // topContentPlacement="outside"
+            bottomContentPlacement="outside"
+            topContentPlacement="outside"
         >
             <TableHeader columns={columns}>
                 {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
