@@ -37,11 +37,10 @@ export const updateProject = async (projectId: string, projectData: FormData) =>
 
 }
 
+// { next: { tags: ['products'] } }
 
+export const getAllProjects = async (searchTerm: string, page: number) => {
 
-export const getAllProjects = async (searchTerm, page) => {
-
-    console.log(searchTerm, page)
 
     try {
         const { data } = await axiosInstance.get('/projects', {
