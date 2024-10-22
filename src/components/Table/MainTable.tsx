@@ -10,6 +10,7 @@ import { Button } from "@nextui-org/button";
 import { PlusIcon } from "lucide-react";
 import { Pagination } from "@nextui-org/pagination";
 import { IProject } from "@/src/types/project.types";
+import CreateProjectModal from "../Modal/CreateProjectModal";
 
 
 // Define the types for the props
@@ -62,9 +63,7 @@ export default function ProjectTable({
                         onValueChange={onSearchChange}
                     />
                     <div className="flex gap-3">
-                        <Button className="bg-foreground text-background" endContent={<PlusIcon />} size="sm" onClick={onAddProject}>
-                            Add Project
-                        </Button>
+                        <CreateProjectModal />
                     </div>
                 </div>
                 <div className="flex justify-between items-center">
