@@ -1,28 +1,25 @@
-"use client";
+'use client'
 
+import { FieldValues, SubmitHandler } from "react-hook-form";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
-import { zodResolver } from '@hookform/resolvers/zod';
-import { FieldValues, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
+import Loading from "@/src/components/UI/Loading";
 import { toast } from "sonner";
-import { loginValidationSchema } from "@/src/schemas";
+import { useUser } from "@/src/context/user.provider";
+import { useForgotPassword } from "@/src/hooks/Auth.hooks";
 import RHForm from "@/src/components/Form/RHForm";
 import RHInput from "@/src/components/Form/RHInput";
-import { useUserLogin } from "@/src/hooks/Auth.hooks";
-import { useUser } from "@/src/context/user.provider";
-import Loading from "@/src/components/UI/Loading";
+import { forgotPasswordValidationSchema } from "@/src/schemas";
 
-const LoginPage = () => {
+const ForgotPassword = () => {
     const searchParams = useSearchParams();
     const router = useRouter();
     const redirect = searchParams.get("redirect");
-
-    const { mutate: handleUserLogin, isPending, isSuccess, data, } = useUserLogin();
+    const { mutate: handleforgotPassword, isPending, isSuccess, data } = useForgotPassword();
     const { setIsLoading: userLoading } = useUser();
-
-
 
     useEffect(() => {
 
@@ -30,7 +27,8 @@ const LoginPage = () => {
             toast.error(data?.message as string);
         }
 
-        if (!isPending && isSuccess) {
+
+        if (!isPending && isSuccess && data?.success) {
             toast.success(data?.message as string);
             if (redirect) {
                 router.push(redirect)
@@ -43,13 +41,13 @@ const LoginPage = () => {
 
     }, [isPending, isSuccess, data])
 
+
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
 
-        handleUserLogin(data);
+        handleforgotPassword(data);
         userLoading(true);
-
-
     };
+
 
     return (
         <>
@@ -57,19 +55,20 @@ const LoginPage = () => {
                 isPending && <Loading></Loading>
             }
             <div className="flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center">
-                <h3 className="my-2 text-2xl font-bold">Login with Recipe Sharing Community</h3>
-                <p className="mb-4">Welcome Back! Let&lsquo;s Get Started</p>
-                <div className="w-[35%]">
+                <h3 className="my-4 text-3xl font-bold ">Forgot Password</h3>
+                <p className="mb-6 text-lg">Enter your email to reset your password</p>
+
+                <div className="w-full max-w-md">
                     <RHForm
                         onSubmit={onSubmit}
-                        resolver={zodResolver(loginValidationSchema)}
-
+                        resolver={zodResolver(forgotPasswordValidationSchema)}
                     >
-                        <div className="py-3">
-                            <RHInput name="email" label="Email" type="email" />
-                        </div>
-                        <div className="py-3">
-                            <RHInput name="password" label="Password" type="password" />
+                        <div className="py-4">
+                            <RHInput
+                                name="email"
+                                label="Email"
+                                type="email"
+                            />
                         </div>
 
                         <Button
@@ -77,29 +76,17 @@ const LoginPage = () => {
                             size="lg"
                             type="submit"
                         >
-                            Login
+                            Reset Password
                         </Button>
                     </RHForm>
-                    <div className="flex justify-between items-center py-2">
-                        <Link href="/forgot-password" className="text-sm text-blue-500 hover:underline">
-                            Forgot Password?
-                        </Link>
-                    </div>
 
-                    <div className="text-center">
-                        Don&lsquo;t have account ? <Link href={"/register"}>Register</Link>
+                    <div className="text-center mt-4 ">
+                        Remember your password? <Link href="/login" className="text-blue-500 hover:underline">Login</Link>
                     </div>
-
                 </div>
             </div>
-
-
-
-
         </>
-
-
     );
 };
 
-export default LoginPage;
+export default ForgotPassword;
