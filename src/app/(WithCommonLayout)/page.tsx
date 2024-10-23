@@ -7,6 +7,8 @@ import { Divider } from "@nextui-org/divider";
 import ExperienceHighlights from "./_components/ExperienceHighlights";
 import FeaturedProjects from "./_components/FeaturedProjects";
 import TestimonialsPreview from "./_components/TestimonialPreview";
+import BlogPreview from "./_components/BlogPreview";
+import CallToAction from "./_components/CallAction";
 
 
 
@@ -29,7 +31,9 @@ export default async function Home() {
         <Divider className="my-4" />
         <TestimonialsPreview />
         <Divider className="my-4" />
-        <SkillsSection />
+        <BlogPreview />
+        <Divider className="my-4" />
+        <CallToAction />
         <Divider className="my-4" />
 
 
