@@ -1,11 +1,11 @@
+import HeadingComponent from '@/src/components/UI/HeadingComponent';
 import React from 'react';
 
 const AchivementSection = () => {
     return (
         <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6 text-center text-blue-600 dark:text-blue-400">
-                Achievements
-            </h2>
+
+            <HeadingComponent heading=' My Achievements' subHeading=' Achievement' />
             <ul className="space-y-6">
                 <li className="flex items-center p-4 border-l-4 border-blue-500 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <span className="mr-4 text-4xl text-yellow-500">🏆</span>

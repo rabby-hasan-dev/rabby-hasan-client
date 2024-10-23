@@ -18,6 +18,7 @@ import CallToAction from "../_components/CallAction";
 import WorkExperience from "./_components/WorkExperience";
 import Education from "./_components/Education";
 import Certification from "./_components/Certification";
+import { Divider } from "@nextui-org/divider";
 
 
 
@@ -41,8 +42,8 @@ const AboutMePage = () => {
           <div className="container mx-auto px-6 text-center">
             {/* Hero Section */}
             <div className="relative">
-              <Image className="rounded-full w-80 h-80 mx-auto shadow-xl object-cover object-top" src={ProfessionalImage} alt="Rabby Hasan" />
-              <div className="bg-white dark:bg-gray-800 mt-12 py-8 px-6 rounded-lg shadow-lg transition duration-500">
+              <Image className="rounded-full w-80 h-80 mx-auto border border-red-500 shadow-xl object-cover object-top" src={ProfessionalImage} alt="Rabby Hasan" />
+              <div className="bg-white dark:bg-gray-800 mt-12 py-8 px-6 border rounded-lg shadow-lg transition duration-500">
                 <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
                   Hi, I am <span className="text-red-500">Rabby Hasan</span>, <br />
                   a <span><TypeAnimationWrapper /></span>
@@ -80,59 +81,42 @@ const AboutMePage = () => {
               </div>
             </div>
 
-            {/* Interactive Resume Section */}
-            <WorkExperience />
+            <Divider className="my-4" />
 
-            {/* Education Section */}
+            <WorkExperience />
+            <Divider className="my-4" />
+
 
 
             <Education />
 
+            <Divider className="my-4" />
 
-
-            {/* Technical Skills Section */}
             <TechSkills />
 
-
-
-            {/* Soft Skills Section */}
+            <Divider className="my-4" />
             <SoftSkills />
-
-
-
-
-
-            {/* Certifications Section */}
+            <Divider className="my-4" />
 
             <Certification />
-            {/* Achivement Section */}
 
+            <Divider className="my-4" />
             <AchivementSection />
 
+            <Divider className="my-4" />
 
-            {/* Testimonials Section */}
             <TestimonialsPreview />
-            {/* Interests Section */}
+
+            <Divider className="my-4" />
+
             <InterestSection />
 
-            {/* Vision Section */}
-
+            <Divider className="my-4" />
 
             <VisionSection />
-
-            {/* call action  */}
+            <Divider className="my-4" />
 
             <CallToAction />
-
-
-
-
-
-
-
-
-
-
 
           </div>
         </section>

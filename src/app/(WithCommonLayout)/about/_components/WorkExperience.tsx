@@ -1,9 +1,11 @@
+import HeadingComponent from '@/src/components/UI/HeadingComponent';
 import React from 'react';
 
 const WorkExperience = () => {
     return (
-        <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6">Work Experience</h2>
+        <section className="my-12">
+
+            <HeadingComponent heading=' My Work Experience' subHeading='Work Experience' />
             <div className="space-y-6">
                 {/* Example Job Role Card */}
                 <div className="p-6 border rounded-lg hover:shadow-lg transition-shadow duration-300">

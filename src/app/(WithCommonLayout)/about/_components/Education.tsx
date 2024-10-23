@@ -1,10 +1,10 @@
+import HeadingComponent from "@/src/components/UI/HeadingComponent";
 
 const Education = () => {
     return (
         <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-6 text-center text-blue-600 dark:text-blue-400">
-                Education
-            </h2>
+
+            <HeadingComponent heading=' My Educations' subHeading='Education' />
             <div className="space-y-6">
                 {/* Bachelor of Science in Computer Science */}
                 <div className="p-6 border rounded-lg hover:shadow-lg transition-shadow duration-300 flex items-center space-x-4">
