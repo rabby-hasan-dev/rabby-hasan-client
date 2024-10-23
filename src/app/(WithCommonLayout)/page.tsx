@@ -4,7 +4,9 @@ import { FeedProjects } from "@/src/services/projects";
 import WhatIdo from "./_components/WhatIDoSection";
 import SkillsSection from "./_components/SkillsSection";
 import { Divider } from "@nextui-org/divider";
-import ProjectSection from "./_components/ProjectSection";
+import ExperienceHighlights from "./_components/ExperienceHighlights";
+import FeaturedProjects from "./_components/FeaturedProjects";
+import TestimonialsPreview from "./_components/TestimonialPreview";
 
 
 
@@ -21,9 +23,15 @@ export default async function Home() {
         <IntroSection />
         <WhatIdo />
         <Divider className="my-4" />
+        <ExperienceHighlights />
+        <Divider className="my-4" />
+        <FeaturedProjects />
+        <Divider className="my-4" />
+        <TestimonialsPreview />
+        <Divider className="my-4" />
         <SkillsSection />
         <Divider className="my-4" />
-        <ProjectSection />
+
 
       </Container>
     </section>

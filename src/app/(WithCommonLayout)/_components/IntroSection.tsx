@@ -4,6 +4,10 @@ import Image from 'next/image';
 import TypeAnimationWrapper from '@/src/components/UI/TypeAnimation';
 import { FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '@/src/assets/icons';
 import { FilesIcon } from 'lucide-react';
+import { Button } from '@nextui-org/button';
+import { FaCode } from 'react-icons/fa';
+import Link from 'next/link';
+import { SiAboutdotme } from 'react-icons/si';
 
 const IntroSection = () => {
 
@@ -44,39 +48,45 @@ const IntroSection = () => {
                     expectations.
                 </p>
 
-                <div>
-                    <h3 className="uppercase font-semibold tracking-wide text-gray-600 dark:text-gray-400">
-                        Find Me On
-                    </h3>
-                    <div className="flex justify-center lg:justify-start space-x-6 mt-4">
-                        {socialLinks.map(({ icon: Icon, url, name }, idx) => (
-                            <a
-                                key={idx}
-                                href={url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-4 text-2xl bg-slate-100 dark:bg-slate-800 text-gray-800 dark:text-gray-200 rounded-full shadow-md hover:scale-110 transition-transform duration-300 ease-in-out"
-                                aria-label={name}
-                            >
-                                <Icon />
-                            </a>
-                        ))}
+
+                <div className='flex space-x-8'>
+
+                    <div>
+                        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4"> Explore My Work</h3>
+                        <Link href="/projects">
+                            <button className="p-4 text-2xl bg-gradient-to-r from-blue-400 to-blue-600 dark:from-blue-500 dark:to-blue-700 text-white rounded-full shadow-lg hover:bg-blue-500 dark:hover:bg-blue-600 hover:scale-105 transition duration-300">
+                                <FaCode />
+                            </button>
+                        </Link>
                     </div>
 
+                    <div>
+                        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">View Resume</h3>
+                        <Link href="https://drive.google.com/file/d/1m-18sCd82jnFhwsCC0oxOIOlHJ2Gxscc/view?usp=drive_link" className="inline-block">
+                            <button className="p-4 text-2xl bg-gradient-to-r from-blue-400 to-blue-600 dark:from-blue-500 dark:to-blue-700 text-white rounded-full shadow-lg hover:bg-blue-500 dark:hover:bg-blue-600 hover:scale-105 transition duration-300">
+                                <FilesIcon />
+                            </button>
+                        </Link>
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Explore me</h3>
+                        <Link href="/about" className="inline-block">
+                            <button className="p-4 text-2xl bg-gradient-to-r from-blue-400 to-blue-600 dark:from-blue-500 dark:to-blue-700 text-white rounded-full shadow-lg hover:bg-blue-500 dark:hover:bg-blue-600 hover:scale-105 transition duration-300">
+                                <SiAboutdotme />
+                            </button>
+                        </Link>
+                    </div>
                 </div>
-                {/* Download CV */}
-                <div>
-                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Download My Resume</h3>
-                    <a href="https://drive.google.com/file/d/1m-18sCd82jnFhwsCC0oxOIOlHJ2Gxscc/view?usp=drive_link" className="inline-block">
-                        <button className="p-4 text-2xl bg-gradient-to-r from-blue-400 to-blue-600 dark:from-blue-500 dark:to-blue-700 text-white rounded-full shadow-lg hover:bg-blue-500 dark:hover:bg-blue-600 hover:scale-105 transition duration-300">
-                            <FilesIcon />
-                        </button>
-                    </a>
-                </div>
+
             </div>
+
+
+
+
         </div>
 
     );
 };
 
 export default IntroSection;
+
