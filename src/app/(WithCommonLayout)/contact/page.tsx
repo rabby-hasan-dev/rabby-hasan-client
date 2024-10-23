@@ -4,6 +4,7 @@ import React from 'react';
 import contactLogo from '@/src/assets/Contact/hanshake.jpg'
 import { Mail, Phone } from 'lucide-react';
 import { FaMedium, } from 'react-icons/fa';
+import contactBanner from '@/src/assets/Contact/contact.jpg'
 
 import { Button } from '@nextui-org/button';
 import { Input, Textarea } from '@nextui-org/input';
@@ -30,10 +31,16 @@ const ContactUs = () => {
 
 
     <div className="container mx-auto p-6">
-      <section className="hero bg-blue-600 flex flex-col items-center justify-center h-64 text-center text-white rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold">Get in Touch</h1>
-        <p className="text-lg mt-2">We’d love to hear from you!</p>
-        <Button className="mt-4" color="success" size="lg">Contact Me</Button>
+
+      <section className="relative bg-[url('@/src/assets/Contact/contact.jpg')] bg-no-repeat bg-cover flex flex-col items-center justify-center h-64 text-center text-white rounded-lg shadow-lg overflow-hidden">
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-black/30 opacity-50"></div>
+
+        <div className="relative z-10">
+          <h1 className="text-4xl font-bold drop-shadow-md">Get in Touch</h1>
+          <p className="text-lg mt-2 drop-shadow-md">We’d love to hear from you!</p>
+          <Button className="mt-4 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-md transition duration-300" size="lg">Contact Me</Button>
+        </div>
       </section>
 
 
@@ -47,7 +54,7 @@ const ContactUs = () => {
           <h2 className="font-bold text-2xl text-gray-800 dark:text-blue-400">Rabby Hasan</h2>
           <p className="text-gray-600 dark:text-gray-300 mt-1 text-center">A reliable Web Developer.</p>
           <p className="mt-4 text-gray-500 dark:text-gray-400 text-center">I am available for Job and Web Development Services. Please connect with me.</p>
-          <div className="mt-4 text-left w-full">
+          <div className="mt-4 text-left w-full space-y-2">
             <p className="flex items-center text-gray-600 dark:text-gray-300">
               <Phone className="mr-2 text-blue-500" /> Phone: 01407950926
             </p>
