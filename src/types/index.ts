@@ -1,4 +1,5 @@
 import { SVGProps } from "react";
+import { IExperience, IProject, ITechnology } from "./project.types";
 
 export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number;
@@ -41,15 +42,11 @@ export interface IUser {
   linkedIn?: string;
   github?: string;
   profilePictureUrl?: string;
-  projects: string;
-  experience: string;
-  technologies: string;
+  projects: IProject[];
+  experience: IExperience[];
+  technologies: ITechnology[];
   isDeleted: boolean;
 }
-
-
-
-
 
 
 

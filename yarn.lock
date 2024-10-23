@@ -261,6 +261,14 @@
     "@react-aria/interactions" "3.21.3"
     "@react-aria/utils" "3.24.1"
 
+"@nextui-org/badge@^2.0.32":
+  version "2.0.32"
+  resolved "https://registry.yarnpkg.com/@nextui-org/badge/-/badge-2.0.32.tgz#b77fff53fbc932120eb6d9275a3301315c323457"
+  integrity sha512-vlV/SY0e7/AmpVP7hB57XoSOo95Fr3kRWcLfMx8yL8VDR2UWMFaMlrT7JTghdgTGFSO7L1Ov1BFwDRRKVe3eyg==
+  dependencies:
+    "@nextui-org/react-utils" "2.0.17"
+    "@nextui-org/shared-utils" "2.0.8"
+
 "@nextui-org/button@2.0.38":
   version "2.0.38"
   resolved "https://registry.yarnpkg.com/@nextui-org/button/-/button-2.0.38.tgz#2756bb1d245e53bc3836d3bff3ffc6f0f03d52ac"

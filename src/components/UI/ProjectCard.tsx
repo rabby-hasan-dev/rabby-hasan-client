@@ -1,6 +1,7 @@
 import { IProject } from "@/src/types/project.types";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
+import Link from "next/link";
 
 
 const ProjectCard = ({ project }: { project: IProject }) => {
@@ -25,9 +26,11 @@ const ProjectCard = ({ project }: { project: IProject }) => {
                     <p className="text-black dark:text-white text-tiny">Available soon.</p>
                     <p className="text-black dark:text-white text-tiny">Get notified.</p>
                 </div>
-                <Button size="sm" color="primary" className="text-tiny text-white bg-blue-500 hover:bg-blue-600 rounded-full py-1 px-3">
-                    Details
-                </Button>
+                <Link href={`/projects/${project?._id}`}>
+                    <Button size="sm" color="primary" className="text-tiny text-white bg-blue-500 hover:bg-blue-600 rounded-full py-1 px-3">
+                        Details
+                    </Button>
+                </Link>
             </div>
         </div>
 
