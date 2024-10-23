@@ -1,6 +1,7 @@
 import HeadingComponent from "@/src/components/UI/HeadingComponent";
 import { Button } from "@nextui-org/button";
-import { Card, CardBody, CardFooter } from "@nextui-org/card";
+import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
+import { Image } from "@nextui-org/image";
 
 
 const FeaturedProjects = () => {
@@ -33,27 +34,28 @@ const FeaturedProjects = () => {
 
             <HeadingComponent heading='My Latest Projects' subHeading='Projects' />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                {projects.slice(0, 3).map((project) => (
-                    <Card key={project.id} className="hover:shadow-lg transition-shadow duration-300">
-                        <CardBody>
-                            <img
-                                src={project.thumbnail}
-                                alt={project.title}
-                                className="h-48 w-full object-cover rounded-t-lg"
-                            />
-                        </CardBody>
-                        <CardFooter className="bg-white dark:bg-gray-800 text-center">
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{project.title}</h3>
-                            <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
-                            <Button
-                                as="a"
-                                href={project.link}
-                                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-                            >
-                                View Project
-                            </Button>
-                        </CardFooter>
-                    </Card>
+                {projects.slice(0, 3).map((project, index) => (
+                    <div key={index} className="relative w-full h-[300px] overflow-hidden">
+                        <Image
+                            alt={`Project ${project.title}`}
+                            className="w-full h-full object-cover scale-125 -translate-y-6"
+                            src={project.link} // Assuming each project has an imageUrl property
+
+                        />
+                        <div className="absolute z-10 top-1 flex flex-col items-start p-4">
+                            <p className="text-tiny text-white/60 uppercase font-bold">New</p>
+                            <h4 className="text-black font-medium text-2xl">{project.title}</h4>
+                        </div>
+                        <div className="absolute bg-white/30 bottom-0 border-t border-zinc-100/50 z-10 flex justify-between items-center w-full p-4">
+                            <div>
+                                <p className="text-black text-tiny">Available soon.</p>
+                                <p className="text-black text-tiny">Get notified.</p>
+                            </div>
+                            <button className="text-tiny text-white bg-blue-500 hover:bg-blue-600 rounded-full py-1 px-3">
+                                Details
+                            </button>
+                        </div>
+                    </div>
                 ))}
             </div>
 

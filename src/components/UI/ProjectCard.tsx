@@ -1,37 +1,37 @@
 import { IProject } from "@/src/types/project.types";
 import { Button } from "@nextui-org/button";
-import { Card, CardFooter, CardHeader } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 
 
 const ProjectCard = ({ project }: { project: IProject }) => {
     return (
-        <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-7">
-            <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                <p className="text-tiny text-white/60 uppercase font-bold">Full Stack </p>
-                <h4 className="text-white/90 font-medium text-xl">{project?.title} </h4>
-            </CardHeader>
+        <div key={project?._id} className="relative w-full h-[300px] overflow-hidden rounded-lg shadow-lg">
             <Image
-                removeWrapper
-                alt="Relaxing app background"
-                className="z-0 w-full h-full object-cover"
-                src={project?.images[0]}
+                alt={`Project ${project.title}`}
+                className="w-full h-full object-cover scale-125 -translate-y-6"
+                src={project?.images?.[0] || undefined}
+                loading="lazy"
             />
-            <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-                <div className="flex flex-grow gap-2 items-center">
-                    <Image
-                        alt="Breathing app icon"
-                        className="rounded-full w-10 h-11 bg-black"
-                        src={project?.author?.profilePicture}
-                    />
-                    <div className="flex flex-col">
-                        <p className="text-tiny text-white/60">Developer </p>
-                        <p className="text-tiny text-white/60">Get a good night's sleep.</p>
-                    </div>
+            <div className="absolute z-10 top-1 flex flex-col items-start p-4 space-y-1">
+                <p className="text-tiny text-white bg-black/30 dark:bg-gray-800/80 border-t border-zinc-100/50 uppercase font-bold">
+                    Full stack
+                </p>
+                <h4 className="text-white bg-black/30 dark:bg-gray-800/80 border-t border-zinc-100/50 font-medium text-2xl">
+                    {project.title}
+                </h4>
+            </div>
+            <div className="absolute bg-white/30 dark:bg-gray-800/80 bottom-0 border-t border-zinc-100/50 z-10 flex justify-between items-center w-full p-4">
+                <div>
+                    <p className="text-black dark:text-white text-tiny">Available soon.</p>
+                    <p className="text-black dark:text-white text-tiny">Get notified.</p>
                 </div>
-                <Button radius="full" size="sm">Details</Button>
-            </CardFooter>
-        </Card>
+                <Button size="sm" color="primary" className="text-tiny text-white bg-blue-500 hover:bg-blue-600 rounded-full py-1 px-3">
+                    Details
+                </Button>
+            </div>
+        </div>
+
+
     );
 };
 
