@@ -2,13 +2,13 @@ import Container from "@/src/components/UI/Container";
 import IntroSection from "./_components/IntroSection";
 import { FeedProjects } from "@/src/services/projects";
 import WhatIdo from "./_components/WhatIDoSection";
-import SkillsSection from "./_components/SkillsSection";
 import { Divider } from "@nextui-org/divider";
 import ExperienceHighlights from "./_components/ExperienceHighlights";
 import FeaturedProjects from "./_components/FeaturedProjects";
-import TestimonialsPreview from "./_components/TestimonialPreview";
+
 import BlogPreview from "./_components/BlogPreview";
 import CallToAction from "./_components/CallAction";
+import TestimonialsPreview from "@/src/components/modules/Home/TestimonialPreview";
 
 
 
