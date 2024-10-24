@@ -1,10 +1,4 @@
 
-
-
-
-import { FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "@/src/assets/icons";
-
-import { FaMedium } from 'react-icons/fa';
 import TechSkills from "@/src/components/modules/skills/TechSkills";
 import SoftSkills from "@/src/components/modules/skills/SoftSkills";
 import InterestSection from "./_components/InterestSection";
@@ -18,7 +12,6 @@ import Certification from "./_components/Certification";
 import { Divider } from "@nextui-org/divider";
 import HeroSection from "./_components/HeroSection";
 import SocialCv from "./_components/SocialCv";
-
 
 
 const AboutMePage = () => {

@@ -1,5 +1,6 @@
 // Use relevant icon library like Heroicons
 import HeadingComponent from "@/src/components/UI/HeadingComponent";
+import PrimaryButton from "@/src/components/UI/PrimaryButton";
 import { Button } from "@nextui-org/button";
 import { BriefcaseIcon, CodeIcon, GlobeIcon } from "lucide-react";
 
@@ -38,15 +39,8 @@ const ExperienceHighlights = () => {
             </div>
 
             {/* Button to Full Experience Section */}
-            <div className="flex justify-center ">
-                <Button
-                    as="a"
-                    href="/about#experience"
-                    className="px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition duration-300"
-                >
-                    View Full Experience
-                </Button>
-            </div>
+            <PrimaryButton path="/about#experience" title=" View Full Experience" />
+
         </div>
     );
 };

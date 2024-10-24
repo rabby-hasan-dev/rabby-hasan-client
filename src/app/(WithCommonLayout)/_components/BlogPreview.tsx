@@ -1,5 +1,6 @@
 
 import HeadingComponent from "@/src/components/UI/HeadingComponent";
+import PrimaryButton from "@/src/components/UI/PrimaryButton";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody } from "@nextui-org/card";
 
@@ -35,7 +36,7 @@ const BlogPreview = () => {
         <div className="w-full px-6 py-12">
             <HeadingComponent heading='Latest Blogs' subHeading='blog' />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 {articles.map((article) => (
                     <Card key={article.id} className="hover:shadow-lg transition-shadow duration-300">
                         <CardBody>
@@ -68,15 +69,7 @@ const BlogPreview = () => {
             </div>
 
             {/* Button to View All Articles */}
-            <div className="flex justify-center">
-                <Button
-                    as="a"
-                    href="/blog"
-                    className="px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition duration-300"
-                >
-                    View All Blog
-                </Button>
-            </div>
+            <PrimaryButton title="View All Blog" path="/blog" />
         </div>
     );
 };

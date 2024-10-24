@@ -3,9 +3,7 @@
 import React from 'react';
 import contactLogo from '@/src/assets/Contact/hanshake.jpg'
 import { Mail, Phone } from 'lucide-react';
-import { FaMedium, } from 'react-icons/fa';
-import contactBanner from '@/src/assets/Contact/contact.jpg'
-
+import { FaMedium } from "react-icons/fa6";
 import { Button } from '@nextui-org/button';
 import { Input, Textarea } from '@nextui-org/input';
 
@@ -15,13 +13,12 @@ import { FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '@/src/asset
 const ContactUs = () => {
 
   const socialIcons = [
-    { Icon: TwitterIcon, link: 'https://twitter.com/yourprofile' },
-    { Icon: LinkedinIcon, link: 'https://linkedin.com/in/yourprofile' },
-    { Icon: GithubIcon, link: 'https://github.com/yourprofile' },
-    { Icon: FacebookIcon, link: 'https://github.com/yourprofile' },
-    { Icon: FaMedium, link: 'https://github.com/yourprofile' }
+    { Icon: TwitterIcon, link: 'https://x.com/rabby_hasan_dev' },
+    { Icon: LinkedinIcon, link: 'https://www.linkedin.com/in/rabby-hasan-dev' },
+    { Icon: GithubIcon, link: 'https://github.com/rabby-hasan-dev' },
+    { Icon: FacebookIcon, link: 'https://www.facebook.com/rabbyhasandev' },
+    { Icon: FaMedium, link: 'https://medium.com/@rabby-hasan' }
   ];
-
 
 
 

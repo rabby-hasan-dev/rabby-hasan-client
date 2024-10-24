@@ -1,5 +1,5 @@
 import HeadingComponent from "@/src/components/UI/HeadingComponent";
-import { Button } from "@nextui-org/button";
+import PrimaryButton from "@/src/components/UI/PrimaryButton";
 
 
 const CallToAction = () => {
@@ -13,20 +13,10 @@ const CallToAction = () => {
                 </p>
 
                 <div className="flex justify-center space-x-4">
-                    <Button
-                        as="a"
-                        href="/contact"
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105"
-                    >
-                        Contact Me
-                    </Button>
-                    <Button
-                        as="a"
-                        href="/projects"
-                        className="border border-blue-600 text-blue-600 hover:bg-blue-700 hover:text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105"
-                    >
-                        View My Projects
-                    </Button>
+
+                    <PrimaryButton path="/contact" title=" Contact Me" />
+                    <PrimaryButton path="/projects" title="View My Projects" />
+
                 </div>
             </div>
         </div>

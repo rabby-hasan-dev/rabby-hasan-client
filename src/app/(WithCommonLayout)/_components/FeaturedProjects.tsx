@@ -1,9 +1,6 @@
 import HeadingComponent from "@/src/components/UI/HeadingComponent";
+import PrimaryButton from "@/src/components/UI/PrimaryButton";
 import ProjectCard from "@/src/components/UI/ProjectCard";
-import { Button } from "@nextui-org/button";
-import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
-import { Image } from "@nextui-org/image";
-
 
 const FeaturedProjects = () => {
     const projects = [
@@ -41,15 +38,8 @@ const FeaturedProjects = () => {
             </div>
 
             {/* Button to View All Projects */}
-            <div className="flex justify-center">
-                <Button
-                    as="a"
-                    href="/projects"
-                    className="px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition duration-300"
-                >
-                    View All Projects
-                </Button>
-            </div>
+            <PrimaryButton path="/projects" title="View My Projects" />
+
         </div>
     );
 };
